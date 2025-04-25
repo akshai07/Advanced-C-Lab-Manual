@@ -1,4 +1,4 @@
-EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+![image](https://github.com/user-attachments/assets/a133145f-71d0-4501-9004-502aa342f78b)EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
 
 Aim:
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
@@ -15,17 +15,36 @@ Else
 6.	Return 0
  
 Program:
+```
+#include<stdio.h> struct eligib
+{
+int age;
+char n[4];
+};
+int main()
+{
+struct eligib e;
+scanf("%d%s",&e.age,e.n);
+if(e.age<=6)
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
+}
+ 
+else
+{
+}
+ 
 
-//type your code here
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
+ 
 
-
+}
+```
 Output:
-
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/104fe851-7c93-480d-88dd-9c35b46fbd1f)
 
 Result:
-Thus, the program is verified successfully. 
+Thus, the program to check eligibility for the vaccine is verified successfully. 
 
 
 
@@ -43,22 +62,31 @@ Algorithm:
 7.	Return 0
  
 Program:
+```
+#include<stdio.h> struct numbers
+{
+int a;
+int b;
+}n;
+int add(struct numbers n);
+int main()
+{
 
-//type your code here
+scanf("%d %d ",&n.a,&n.b);
+printf("%d",add(n));
+}
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
 
-
-
-
+```
 Output:
-
-
-//paste your output here
-
-
-
+![image](https://github.com/user-attachments/assets/cb4c0265-a49d-47d4-b546-a7c2ea5df44a)
 
 Result:
-Thus, the program is verified successfully
+Thus, the program for passing structure as function and returning a structure from a function
+ is verified successfully
 
 
  
@@ -85,8 +113,19 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
 
-//type your code here
+#include <stdio.h> int main()
+{
+FILE *p;
+char name[30]; scanf("%s",name);
+printf("%s File Created Successfully",name);
+p=fopen("name","w");
+printf("\n%s File Opened",name);
+ fclose(p);
+printf("\n%s File Closed",name);
+}
+```
 
 
 
@@ -94,9 +133,8 @@ Program:
 Output:
 
 
-//paste your output here
 
-
+![image](https://github.com/user-attachments/assets/3f4d69d0-a94a-41f0-8913-3ddfc2ec782f)
 
 
 
@@ -107,7 +145,7 @@ Output:
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program to read a file name from user is verified successfully
  
 
 
@@ -132,16 +170,34 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h> int main()
+{
+FILE *p;
+char name[20];
+ int num;
+char text[50];
+scanf("%s%d",name,&num);
+p=fopen("name","w");
+printf("%s Opened",name);
+for(int i=0;i<num;i++)
+{
+scanf("%s",text);
+fputs(text,p);
+}
+printf("\nData added Successfully");
 
-//type your code here
-
+}
+`
+```
 
 
 
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/16dd466d-ecde-4882-8c86-bccb32377abf)
+
 
 
 
@@ -149,7 +205,7 @@ Output:
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program  to read  a file and insert text in that file is verified successfully
 
 
 
@@ -186,16 +242,48 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```
 
-//type your code here
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+    char name[20];
+    int marks;
+};
+int main()
+{
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+    free (s);
+    
+    return 0;
+}
+
+```
+
 
 
 
 
 Output:
+![image](https://github.com/user-attachments/assets/9698eb2f-cb8b-463a-b232-0ca8cab684cf)
 
-
-//paste your output here
 
 
 
@@ -203,4 +291,4 @@ Output:
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information is verified successfully
